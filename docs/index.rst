@@ -9,6 +9,15 @@ About Bambu XML-RPC
 This package exposes Python's own XML-RPC functionality to Django views,
 and allows any function to work as an XML-RPC endpoint.
 
+About Bambu Tools 2.0
+---------------------
+
+This is part of a toolset called Bambu Tools. It's being moved from a
+namespace of ``bambu`` to its own 'root-level' package, along with all
+the other tools in the set. If you're upgrading from a version prior to
+2.0, please make sure to update your code to use ``bambu_xmlrpc`` rather
+than ``bambu.xmlrpc``.
+
 Installation
 ------------
 
