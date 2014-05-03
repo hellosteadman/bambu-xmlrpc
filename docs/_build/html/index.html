@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Bambu XML-RPC &mdash; Bambu XML-RPC 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Bambu XML-RPC 2.0 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">Bambu XML-RPC 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="bambu-xml-rpc">
+<h1>Bambu XML-RPC<a class="headerlink" href="#bambu-xml-rpc" title="Permalink to this headline">¶</a></h1>
+<p>An extensible XML-RPC provider</p>
+<div class="section" id="about-bambu-xml-rpc">
+<h2>About Bambu XML-RPC<a class="headerlink" href="#about-bambu-xml-rpc" title="Permalink to this headline">¶</a></h2>
+<p>This package exposes Python&#8217;s own XML-RPC functionality to Django views,
+and allows any function to work as an XML-RPC endpoint.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Install the package via Pip:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install bambu-xmlrpc
+</pre></div>
+</div>
+<p>Add it to your <tt class="docutils literal"><span class="pre">INSTALLED_APPS</span></tt> list:</p>
+<div class="highlight-python"><div class="highlight"><pre>INSTALLED_APPS = (
+    ...
+    &#39;bambu_xmlrpc&#39;
+)
+</pre></div>
+</div>
+<p>Add <tt class="docutils literal"><span class="pre">bambu_xmlrpc.urls</span></tt> to your URLconf:</p>
+<div class="highlight-python"><div class="highlight"><pre>urlpatterns = patterns(&#39;&#39;,
+    ...
+    url(r&#39;^xml-rpc/&#39;, include(&#39;bambu_xmlrpc.urls&#39;)),
+)
+</pre></div>
+</div>
+<p>Your endpoint will be available at /xml-rpc/.</p>
+</div>
+<div class="section" id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<p>Apply the <tt class="docutils literal"><span class="pre">bambu_xmlrpc.handler</span></tt> decorator to a function to expose it
+as an API. You can then GET from and POST to the function via the
+/xml-rpc/ endpoint.</p>
+<span class="target" id="module-bambu_xmlrpc"></span><dl class="function">
+<dt id="bambu_xmlrpc.handler">
+<tt class="descclassname">bambu_xmlrpc.</tt><tt class="descname">handler</tt><big>(</big><em>namespace=''</em><big>)</big><a class="headerlink" href="#bambu_xmlrpc.handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>A decorator that turns a normal Python function into a Django-aware view that conforms to the
+XML-RPC spec</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>namespace</strong> &#8211; The fully-qualified namespace for the function</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="questions-or-suggestions">
+<h2>Questions or suggestions?<a class="headerlink" href="#questions-or-suggestions" title="Permalink to this headline">¶</a></h2>
+<p>Find me on Twitter (&#64;iamsteadman) or <a class="reference external" href="http://steadman.io/">visit my blog</a>.</p>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bambu XML-RPC</a><ul>
+<li><a class="reference internal" href="#about-bambu-xml-rpc">About Bambu XML-RPC</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#basic-usage">Basic usage</a></li>
+<li><a class="reference internal" href="#questions-or-suggestions">Questions or suggestions?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">Bambu XML-RPC 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Steadman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
